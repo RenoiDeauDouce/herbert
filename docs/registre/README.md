@@ -18,6 +18,6 @@ Pendant le gel, chaque envie de modification est consignée ici, jamais appliqu�
 
 ## État
 
-Les dix entrées actuelles (C-01 à C-10) sont dans le registre en ligne, lié depuis le [README racine](../../README.md). Elles seront reprises ici une à une.
+Les douze entrées actuelles (C-01 à C-12) sont dans le registre en ligne, lié depuis le [README racine](../../README.md). Elles seront reprises ici une à une.
 
 Le registre ne contient aucun texte de décision ni donnée personnelle (G-07).

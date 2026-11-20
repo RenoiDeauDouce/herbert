@@ -25,7 +25,7 @@ L'ordre suit les dépendances.
 ## Sources de vérité actuelles, hors dépôt
 
 - Spec d'Herbert révisée : <https://claude.ai/artifact/NU2prNBXuDHJa5BvEwKau5>
-- Registre des changements (C-01 à C-12, dont C-11 et C-12 à ajouter) : <https://claude.ai/artifact/Ddcdv8Y8QhkjvqU9a9uE9A>
+- Registre des changements (C-01 à C-12) : <https://claude.ai/artifact/Ddcdv8Y8QhkjvqU9a9uE9A>
 - Maquette Figma : <https://www.figma.com/design/k498URAudOXclhXJADIkiH/Herb.ert>
 
 Ces documents seront repris dans le dépôt à mesure que les quatre documents ci-dessus s'écrivent.
