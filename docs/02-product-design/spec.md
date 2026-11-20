@@ -1,6 +1,6 @@
 # 02 – Product design : parcours et règles d'interface d'alpha.1
 
-**Statut** : en cours d'écriture. Les sections 1 à 3 sont validées le 20 novembre 2026 ; les sections 4 et 5 restent à écrire.
+**Statut** : en cours d'écriture. Les sections 1 à 4 sont validées le 20 novembre 2026 ; la section 5 reste à écrire.
 **Version visée** : `0.0.1-alpha.1`. **Lecteur** : le designer qui pilote `alpha.1`, seul.
 **Source visuelle** : la [maquette Figma](https://www.figma.com/design/k498URAudOXclhXJADIkiH/Herb.ert). Elle montre la cible. Dans `alpha.1`, tout se passe en conversation, dans Claude Code seul : chaque composant est rendu en bloc de texte structuré. Le panneau (C-10) et la fenêtre flottante (C-12) sont au registre.
 
@@ -146,3 +146,47 @@ Les quatre cas limites sont ceux de l'évaluation (A11 du document 01).
 | N° | Question | Statut |
 | --- | --- | --- |
 | QD-01 | Quelles durées séparent Rush de Pace ? | À renseigner : la spec définit Rush comme « pressé » et Pace comme « dans les temps », sans durée. T-01 reprend ces libellés. |
+
+## 4. Accessibilité
+
+Les contrastes sont mesurés sur la maquette Figma le 20 novembre 2026 : 433 nœuds de texte parcourus sur les dix pages de composants et d'écrans, 137 combinaisons distinctes de texte, de fond, de taille et de graisse. Le seuil est WCAG 2.2 AA : 4,5:1 pour le texte courant, 3:1 pour le grand texte (24 px, ou 18,66 px en gras). Les étiquettes de présentation du fichier Figma ne font pas partie du produit et sont écartées.
+
+### Règles
+
+| N° | Règle | Vérification |
+| --- | --- | --- |
+| AC-01 | Tout texte atteint 4,5:1 sur son fond, le grand texte 3:1. La teinte tertiaire passe de `#767c64` à `#656b53`. | Contraste calculé sur chaque couple de la maquette |
+| AC-02 | Le texte courant fait 14 px au minimum ; les étiquettes et les métadonnées 12 px au minimum. | Relevé des tailles dans la maquette |
+| AC-03 | Aucun état ne tient à la couleur seule : prouvé, sans preuve, contribution, dégradé, bloquant, accordée, refusée portent chacun un mot. | Relecture des huit composants |
+| AC-04 | Un composant inactif est exempté du contraste, mais son texte dit pourquoi il est inactif (T-20). | Relecture de la carte de décision |
+
+### Mesures : ce qui échoue
+
+| Texte | Fond | Contraste | Où | Après correction |
+| --- | --- | --- | --- | --- |
+| `#767c64` | `#ffffff` | 4,34:1 | Étiquettes 11 px, sources, textes d'aide de 14 et 15 px | 5,55:1 |
+| `#767c64` | `#eceee5` | 3,71:1 | Libellés « Effet tech », « Output », « Écartée », « Lien vers la preuve » | 4,74:1 |
+| `#767c64` | `#edf0e1` | 3,75:1 | Le mot « vous », écran de la conversation | 4,80:1 |
+| `#9aa088` | `#eceee5` | 2,31:1 | Bouton « Trancher » inactif | Exempté (AC-04) |
+
+Les autres couples passent. Les plus bas sont l'ambre `#8a5a0a` sur `#fbefd3` (5,18:1) et le secondaire `#5a5f4b` sur `#eceee5` (5,65:1). L'encre `#3b3f31` atteint de 8,2 à 10,82:1 selon le fond.
+
+### Tailles relevées
+
+| Taille | Où | Règle |
+| --- | --- | --- |
+| 14 à 20 px | Texte courant, titres de carte | Conforme à AC-02 |
+| 11 px | Étiquettes, sources, métadonnées | À passer à 12 px |
+| 10 px | Étiquettes de sous-agent du rail, glyphes `+` et `−` du diff, chemins de fichier, références de trace | À passer à 12 px |
+
+### Écarts à corriger dans la maquette
+
+La maquette n'est pas modifiée à ce jour.
+
+1. **Teinte tertiaire** : `#767c64` devient `#656b53` partout où elle est utilisée.
+2. **Tailles** : les textes de 10 et 11 px passent à 12 px.
+3. **Textes** : certains libellés de la maquette diffèrent de la section 3, qui fait foi. « Suffisant. J'arrête ici. » devient T-05, « Trancher » devient T-21, « Herbert veut modifier un fichier » devient T-23.
+
+### Hors périmètre
+
+Le focus clavier et la taille des cibles ne sont pas mesurés : `alpha.1` est en conversation, sans composant interactif propre. Ils entrent dans la spec du panneau (C-10) et de la fenêtre flottante (C-12).
