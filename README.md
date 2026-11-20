@@ -17,7 +17,7 @@ L'ordre suit les dépendances.
 | N° | Dossier | Rôle | Dépend de | Statut |
 | --- | --- | --- | --- | --- |
 | 01 | [`docs/01-product-management`](docs/01-product-management/README.md) | Périmètre, critères de sortie, jalons, risques | – | À relire ([spec](docs/01-product-management/spec.md)) |
-| 02 | [`docs/02-product-design`](docs/02-product-design/spec.md) | Parcours, états, règles d'interface | 01 | En cours (sections 1 et 2 validées) |
+| 02 | [`docs/02-product-design`](docs/02-product-design/spec.md) | Parcours, états, règles d'interface | 01 | En cours (sections 1 à 3 validées) |
 | 03 | [`docs/03-tech-scoping-data`](docs/03-tech-scoping-data/README.md) | Architecture, contrat public, données, sécurité | 01 (en parallèle de 02) | À écrire |
 | 04 | [`docs/04-qa-dogfooding`](docs/04-qa-dogfooding/README.md) | Tests QA, protocole et lecture du dogfooding | 01, 02, 03 | À écrire |
 | – | [`docs/registre`](docs/registre/README.md) | Changements en attente pendant le gel | – | Ouvert |

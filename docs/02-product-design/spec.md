@@ -1,6 +1,6 @@
 # 02 – Product design : parcours et règles d'interface d'alpha.1
 
-**Statut** : en cours d'écriture. Les sections 1 et 2 sont validées le 20 novembre 2026 ; les sections 3 à 5 restent à écrire.
+**Statut** : en cours d'écriture. Les sections 1 à 3 sont validées le 20 novembre 2026 ; les sections 4 et 5 restent à écrire.
 **Version visée** : `0.0.1-alpha.1`. **Lecteur** : le designer qui pilote `alpha.1`, seul.
 **Source visuelle** : la [maquette Figma](https://www.figma.com/design/k498URAudOXclhXJADIkiH/Herb.ert). Elle montre la cible. Dans `alpha.1`, tout se passe en conversation, dans Claude Code seul : chaque composant est rendu en bloc de texte structuré. Le panneau (C-10) et la fenêtre flottante (C-12) sont au registre.
 
@@ -59,3 +59,90 @@ Les titres sont ceux de la spec en ligne, gardés en anglais. Leur traduction, s
 ### Défaut connu dans la maquette
 
 Quelques variantes ont des noms cassés : `État=État6`, `État=État8` et `État=Intelligence Sense` (rail, composant Étape), `Étape active=Étape active5` (rail). À corriger dans Figma avant de s'en servir pour un handoff ; sans effet sur `alpha.1`.
+
+## 3. Contenus
+
+Tous les textes sont ceux d'`alpha.1`, en conversation. Les `{…}` sont des valeurs que l'orchestrateur remplit à l'exécution. Aucun chiffre, seuil ou définition n'est ajouté à ce que la spec donne.
+
+### Règles de ton
+
+1. **Vouvoiement.** Les cartes sont lues par la personne qui décide, qui n'est pas toujours le designer.
+2. **Une phrase, un fait.** Pas de formule d'accueil, pas de conclusion creuse.
+3. **Herbert dit ce qu'il ne sait pas.** « Je ne sais pas » ou « À renseigner », jamais un trou comblé (G-01).
+4. **Un message dit quoi, pourquoi, puis la suite.** Exemple : « Dégradé : {skill} n'a pas répondu. L'étape continue sans lui. »
+5. **Le nom du décideur apparaît sur la carte de décision et dans le fichier de décision, nulle part ailleurs.** Le récit écrit « la personne nommée » (A5 du document 01).
+6. **Typographie française stricte** : espace insécable avant `:` `;` `?` `!` et dans les guillemets. Pas de point médian.
+
+### Ouverture et contrat de séance
+
+| N° | Contexte | Texte |
+| --- | --- | --- |
+| T-01 | Question 1 | Combien de temps avant la décision ? Rush (pressé) ou Pace (dans les temps). |
+| T-02 | Question 2 | Qu'avez-vous en main : une hypothèse (Assumption, confiance faible), des signaux (Signal, confiance moyenne) ou une preuve (Evidence, confiance haute) ? |
+| T-03 | Confirmation | Mode : {mode}. État : {état}. Je prépare les critères. |
+| T-04 | Contrat | Voici ce qui sera suffisant pour {étape}. Corrigez un critère si besoin : je réécris la liste. |
+| T-05 | Tous les critères cochés | Suffisant. Je m'arrête ici. |
+| T-06 | Changement de contexte | {Le mode / L'état} passe de {ancien} à {nouveau}. Je réécris les critères de {étape}. |
+| T-07 | Relance | {sous-agent} s'était arrêté : critère non atteint, {critère}. Je reprends. |
+
+### Étapes, rail et champs manquants
+
+| N° | Contexte | Texte |
+| --- | --- | --- |
+| T-08 | Rail, en attente | {étape} : en attente |
+| T-09 | Rail, en cours | {étape} : en cours |
+| T-10 | Rail, terminé | {étape} : terminée |
+| T-11 | Rail, à reprendre | {étape} : à reprendre, critères non atteints |
+| T-12 | Rail, `choose` attend | choose : attend le décideur |
+| T-13 | `sense` terminé | Problème formulé : {problème} |
+| T-14 | `devise` terminé | {n} options. Chacune porte ses quatre champs et ses quatre lignes de lentille. |
+| T-15 | Option demandée | Une option de plus : {n+1} au total. |
+| T-16 | Champs manquants | {n} champ(s) à renseigner avant de décider : |
+| T-17 | Un champ manquant | {option} – {champ} : à renseigner. Source : {source, ou « aucune »}. |
+
+### Décision et écriture
+
+| N° | Contexte | Texte |
+| --- | --- | --- |
+| T-18 | Tension | Deux effets se contredisent : {effet A} et {effet B}. La décision revient à la personne nommée. |
+| T-19 | Champ | Décideur (obligatoire) |
+| T-20 | Bouton inactif | Indiquez le décideur pour enregistrer la décision. |
+| T-21 | Bouton actif | Enregistrer la décision |
+| T-22 | Tranchée | Décision enregistrée : option {X}, par {décideur}. |
+| T-23 | Demande d'écriture | Herbert souhaite écrire {fichier}. Voici la modification : |
+| T-24 | Boutons | Accorder / Refuser |
+| T-25 | Accordée | Écrit et journalisé. Vous pouvez l'annuler. |
+| T-26 | Refusée | Refusé. Rien n'a été modifié. |
+
+### Attestation, récit et fin de session
+
+| N° | Contexte | Texte |
+| --- | --- | --- |
+| T-27 | Niveaux | Output, Outcome, Impact. États : Prouvé, Sans preuve, Contribution. |
+| T-28 | Niveau sans preuve | Aucune preuve à ce jour. Mesure planifiée : {date, ou « aucune »}. |
+| T-29 | Impact | Contribution du design, avec d'autres facteurs. Non attribué au design seul. |
+| T-30 | Phrase sans trace | Sans trace : à retirer ou à documenter. |
+| T-31 | Récit, décideur | La personne nommée a tranché pour l'option {X}. |
+| T-32 | Question 1 de fin | Avez-vous retenu une option que vous n'auriez pas proposée seul ? Oui / Non |
+| T-33 | Question 2 de fin | Le problème a-t-il été reformulé en cours de session ? Oui / Non |
+| T-34 | Session incomplète | Session interrompue avant la revue. Les deux questions de fin ne sont pas posées. |
+
+### Mode dégradé et cas limites
+
+Les quatre cas limites sont ceux de l'évaluation (A11 du document 01).
+
+| N° | Contexte | Texte |
+| --- | --- | --- |
+| T-35 | Dégradé | Dégradé : {skill} n'a pas répondu. {étape} continue sans lui. |
+| T-36 | Bloquant | Bloquant : {skill} est indispensable et n'a pas répondu. {étape} s'arrête. |
+| T-37 | Source absente | Je ne trouve pas la source de {champ}. Je le laisse à renseigner. |
+| T-38 | Entrée hors sujet | Cette demande sort du périmètre d'Herbert : décider une question de design, et le prouver. Je ne la traite pas. |
+| T-39 | Entrée trop longue | L'entrée dépasse ce que je peux traiter. Pouvez-vous la réduire ou indiquer la partie utile ? |
+| T-40 | Cas ambigu | Je vois deux lectures possibles : {A} ou {B}. Laquelle retenir ? |
+| T-41 | Pas de réponse | Je ne sais pas. {Raison}. |
+
+### Questions ouvertes
+
+| N° | Question | Statut |
+| --- | --- | --- |
+| QD-01 | Quelles durées séparent Rush de Pace ? | À renseigner : la spec définit Rush comme « pressé » et Pace comme « dans les temps », sans durée. T-01 reprend ces libellés. |
