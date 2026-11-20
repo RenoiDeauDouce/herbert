@@ -1,6 +1,6 @@
 # 02 – Product design : parcours et règles d'interface d'alpha.1
 
-**Statut** : en cours d'écriture. Les sections 1 à 4 sont validées le 20 novembre 2026 ; la section 5 reste à écrire.
+**Statut** : écrit, à relire. Les sections 1 à 4 sont validées le 20 novembre 2026 ; la section 5 est un brouillon écrit le même jour.
 **Version visée** : `0.0.1-alpha.1`. **Lecteur** : le designer qui pilote `alpha.1`, seul.
 **Source visuelle** : la [maquette Figma](https://www.figma.com/design/k498URAudOXclhXJADIkiH/Herb.ert). Elle montre la cible. Dans `alpha.1`, tout se passe en conversation, dans Claude Code seul : chaque composant est rendu en bloc de texte structuré. Le panneau (C-10) et la fenêtre flottante (C-12) sont au registre.
 
@@ -190,3 +190,42 @@ La maquette n'est pas modifiée à ce jour.
 ### Hors périmètre
 
 Le focus clavier et la taille des cibles ne sont pas mesurés : `alpha.1` est en conversation, sans composant interactif propre. Ils entrent dans la spec du panneau (C-10) et de la fenêtre flottante (C-12).
+
+## 5. `alpha.1` et suite
+
+`alpha.1` se joue en conversation, dans Claude Code seul. Chaque composant de la section 2 y est rendu en bloc de texte, avec les textes de la section 3. Tout ajout d'interface va au registre.
+
+### Dedans, dehors
+
+| Moment | Dans `alpha.1` | Au registre |
+| --- | --- | --- |
+| Ouverture | Deux questions, une réponse chacune | – |
+| Contrat de séance | Les critères écrits par Herbert, corrigeables | Critères cochés en direct (C-08) |
+| Avancement | Une ligne de statut par étape | Fil des quatre étapes avec leur état (C-08) |
+| Options | Un bloc par option | Cartes côte à côte (C-10) |
+| Champs manquants | Les « À renseigner » listés | Remplis sur place, avec leur source (C-09) |
+| Décision | Le décideur obligatoire, la tension entre deux effets (G-04) | Carte de décision dans un panneau (C-10) |
+| Écritures | Une validation avant toute modification (G-05) | Validation façon diff dans le panneau (C-10) |
+| Attestation | Les trois niveaux, ceux sans preuve marqués comme tels | – |
+| Récit | Une référence de trace par phrase | Trace au survol (C-10) |
+| Mode dégradé | Un message qui dit quel skill a échoué | – |
+| Contexte et exécution | – | Fenêtre flottante : contexte capturé à la validation humaine, états d'exécution en direct (C-12) |
+| Autres environnements | – | Hors Claude Code, dont Cowork (C-11) |
+
+La maquette Figma montre la cible (panneau, cartes). Aucun des neuf composants n'est rendu en carte graphique dans `alpha.1` : la maquette sert de référence pour le panneau (C-10), pas de modèle d'implémentation du premier test.
+
+### Critères d'acceptation
+
+| N° | Critère | Vérification |
+| --- | --- | --- |
+| D1 | Une session de test complète traverse les neuf moments de la section 1, dans l'ordre | Relecture de la session contre le tableau |
+| D2 | Chaque message émis reprend le texte de son gabarit T-01 à T-41, valeurs remplies | Comparaison par script. À confirmer avec le document 03 : elle suppose que l'orchestrateur sorte les messages dans une forme fixe. |
+| D3 | Les règles AC-01 à AC-04 sont appliquées à la maquette, puis les contrastes sont recalculés | Nouveau relevé des contrastes dans Figma. Le travail dans Figma reste à faire, avec l'accord du designer. |
+| D4 | Aucun élément du registre (C-08 à C-12) n'apparaît dans une session d'`alpha.1` | Relecture de la session |
+
+### Questions ouvertes
+
+| N° | Question | Statut |
+| --- | --- | --- |
+| QD-01 | Quelles durées séparent Rush de Pace ? | À renseigner (section 3) |
+| QD-02 | Quel rang de réintroduction pour C-08, C-09 et C-10 ? | À fixer avant la fin du gel (registre : « à classer ») |
